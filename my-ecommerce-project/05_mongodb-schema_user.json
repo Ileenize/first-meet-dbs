@@ -1,0 +1,16 @@
+use("my_project");
+{
+  _id: ObjectId,
+  username: string,
+  email: string,
+  password_hash: string,
+  role: string, // player, cafe_owner, admin
+  profile: {
+    display_name: string,
+    avatar_url: string,
+    bio: string,
+    skill_level: string // beginner, intermediate, advanced
+  },
+  favorite_games: [ObjectId], // ref board_games
+  created_at: Timestamp
+}
