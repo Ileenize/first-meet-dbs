@@ -1,0 +1,14 @@
+const paymentSchema = new mongoose.Schema({
+  booking_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Booking', required: true },
+  user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  amount: { type: Number, required: true, min: 0 },
+  status: { 
+    type: String, 
+    enum: ['pending', 'successful', 'failed', 'refunded', 'forfeited'], 
+    default: 'pending' 
+  },
+  transaction_id: { type: String, required: true }, // รหัสอ้างอิงจากพวก Omise/Stripe หรือ Mock ขึ้นมา
+  paid_at: { type: Date }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Payment', paymentSchema);

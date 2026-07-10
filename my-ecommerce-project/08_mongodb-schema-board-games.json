@@ -1,0 +1,10 @@
+const boardGameSchema = new mongoose.Schema({
+  title: { type: String, required: true, unique: true, trim: true },
+  min_players: { type: Number, required: true },
+  max_players: { type: Number, required: true },
+  duration_minutes: { type: Number },
+  category: { type: String }, // เช่น party, strategy, co-op
+  complexity: { type: String, enum: ['beginner', 'intermediate', 'expert'], default: 'beginner' }
+});
+
+module.exports = mongoose.model('BoardGame', boardGameSchema);

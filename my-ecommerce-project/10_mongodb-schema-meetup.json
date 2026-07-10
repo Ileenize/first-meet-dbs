@@ -1,0 +1,22 @@
+const meetupSchema = new mongoose.Schema({
+  host_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  cafe_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Cafe', required: true },
+  table_id: { type: mongoose.Schema.Types.ObjectId, ref: 'CafeTable', required: false }, // ใส่ทีหลังได้ถ้าเป็นตี้ Open
+  game_id: { type: mongoose.Schema.Types.ObjectId, ref: 'BoardGame', required: false }, // Nullable ถ้าเป็นตี้ Open
+  title: { type: String, required: true, trim: true },
+  description: { type: String },
+  type: { type: String, enum: ['specific', 'open'], required: true },
+  date: { type: Date, required: true },
+  start_time: { type: String, required: true }, // Format: "18:00"
+  end_time: { type: String, required: true },
+  min_players: { type: Number, required: true, default: 2 },
+  max_players: { type: Number, required: true },
+  current_players: { type: Number, default: 1 }, // เริ่มต้นมี Host 1 คน
+  status: { 
+    type: String, 
+    enum: ['recruiting', 'confirmed', 'completed', 'cancelled'], 
+    default: 'recruiting' 
+  }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Meetup', meetupSchema);

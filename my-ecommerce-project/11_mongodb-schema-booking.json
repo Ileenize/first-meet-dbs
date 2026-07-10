@@ -1,0 +1,17 @@
+const bookingSchema = new mongoose.Schema({
+  meetup_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Meetup', required: true },
+  player_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  booking_code: { type: String, required: true, unique: true }, // สำหรับทำ QR Code เช็คอิน
+  status: { 
+    type: String, 
+    enum: ['pending_payment', 'confirmed', 'checked_in', 'flaked', 'cancelled'], 
+    default: 'pending_payment' 
+  }
+}, { timestamps: true });
+
+// [QA Insight]: ทำ Index ป้องกันไม่ให้ผู้เล่นกดเข้าตี้เดิมซ้ำซ้อนซ่อนเงื่อน
+bookingSchema.index({ meetup_id: 1, player_id: 1 }, { unique: true });
+// [SA Insight]: ทำ Index ที่รหัสคิวอาร์โค้ด เพราะพนักงานหน้าร้านต้องสแกนค้นหาบ่อยมาก
+bookingSchema.index({ booking_code: 1 });
+
+module.exports = mongoose.model('Booking', bookingSchema);

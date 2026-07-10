@@ -1,0 +1,8 @@
+const cafeGameSchema = new mongoose.Schema({
+  cafe_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Cafe', required: true },
+  game_id: { type: mongoose.Schema.Types.ObjectId, ref: 'BoardGame', required: true },
+  condition: { type: String, enum: ['good', 'damaged'], default: 'good' },
+  is_available: { type: Boolean, default: true } // ร้านอาจจะเก็บเกมไว้ซ่อมแซม
+});
+
+module.exports = mongoose.model('CafeGame', cafeGameSchema);

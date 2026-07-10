@@ -1,0 +1,13 @@
+const cafeSchema = new mongoose.Schema({
+  owner_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  name: { type: String, required: true, trim: true },
+  address: { type: String, required: true },
+  phone: { type: String, required: true },
+  operating_hours: [{
+    day: { type: String, enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
+    open_time: { type: String }, // Format: "10:00"
+    close_time: { type: String } // Format: "22:00"
+  }]
+}, { timestamps: true });
+
+module.exports = mongoose.model('Cafe', cafeSchema);
