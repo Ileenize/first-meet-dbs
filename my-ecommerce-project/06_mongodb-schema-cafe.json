@@ -1,4 +1,4 @@
-const cafeSchema = new mongoose.Schema({
+/*const cafeSchema = new mongoose.Schema({
   owner_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   name: { type: String, required: true, trim: true },
   address: { type: String, required: true },
@@ -8,6 +8,14 @@ const cafeSchema = new mongoose.Schema({
     open_time: { type: String }, // Format: "10:00"
     close_time: { type: String } // Format: "22:00"
   }]
-}, { timestamps: true });
+}, { timestamps: true });*/
 
-module.exports = mongoose.model('Cafe', cafeSchema);
+//module.exports = mongoose.model('Cafe', cafeSchema);
+
+[{
+  "_id": 1,
+  "owner_id": 1,
+  "name": "pixel",
+  "address": "Kangsadan",
+  "phone": "000-000-0000"
+}]
