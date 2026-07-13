@@ -1,0 +1,120 @@
+use("my-ecommerce");
+
+db.meetup.deleteMany({});
+
+db.meetup.insertMany([
+    {
+        "_id": new ObjectId("66a000000000000000000001"),
+        "host_id": new ObjectId("665000000000000000000001"),
+        "cafe_id": new ObjectId("666000000000000000000001"),
+        "table_id": new ObjectId("667000000000000000000001"),
+        "game_id": new ObjectId("668000000000000000000001"),
+        "title": "Catan Friday Night",
+        "description": "Beginner-friendly Catan meetup. Rules will be explained before playing.",
+        "type": "specific",
+        "date": {
+                    "$date": "2026-07-17T00:00:00+07:00"
+                },
+        "start_time": "18:30",
+        "end_time": "20:30",
+        "min_players": 3,
+        "max_players": 4,
+        "current_players": 4,
+        "status": "confirmed"
+    },
+    {
+        "_id": new ObjectId("66a000000000000000000002"),
+        "host_id": new ObjectId("665000000000000000000002"),
+        "cafe_id": new ObjectId("666000000000000000000001"),
+        "table_id": null,
+        "game_id": null,
+        "title": "Open Board Game for Beginners",
+        "description": "Open meetup. Cafe staff will recommend a suitable game after everyone arrives.",
+        "type": "open",
+        "date": {
+                    "$date": "2026-07-18T00:00:00+07:00"
+                },
+        "start_time": "14:00",
+        "end_time": "17:00",
+        "min_players": 3,
+        "max_players": 5,
+        "current_players": 2,
+        "status": "recruiting"
+    },
+    {
+        "_id": new ObjectId("66a000000000000000000003"),
+        "host_id": new ObjectId("665000000000000000000003"),
+        "cafe_id": new ObjectId("666000000000000000000002"),
+        "table_id": new ObjectId("667000000000000000000005"),
+        "game_id": new ObjectId("668000000000000000000002"),
+        "title": "Werewolf Social Night",
+        "description": "Social deduction meetup for players of every experience level.",
+        "type": "specific",
+        "date": {
+                    "$date": "2026-07-18T00:00:00+07:00"
+                },
+        "start_time": "19:00",
+        "end_time": "21:00",
+        "min_players": 5,
+        "max_players": 8,
+        "current_players": 6,
+        "status": "confirmed"
+    },
+    {
+        "_id": new ObjectId("66a000000000000000000004"),
+        "host_id": new ObjectId("665000000000000000000004"),
+        "cafe_id": new ObjectId("666000000000000000000002"),
+        "table_id": null,
+        "game_id": null,
+        "title": "Sunday Open Table",
+        "description": "Join first, then choose a game together at the cafe.",
+        "type": "open",
+        "date": {
+                    "$date": "2026-07-19T00:00:00+07:00"
+                },
+        "start_time": "13:00",
+        "end_time": "16:00",
+        "min_players": 3,
+        "max_players": 6,
+        "current_players": 2,
+        "status": "recruiting"
+    },
+    {
+        "_id": new ObjectId("66a000000000000000000005"),
+        "host_id": new ObjectId("665000000000000000000005"),
+        "cafe_id": new ObjectId("666000000000000000000001"),
+        "table_id": new ObjectId("667000000000000000000003"),
+        "game_id": new ObjectId("668000000000000000000003"),
+        "title": "Splendor Quick Match",
+        "description": "A completed meetup used to demonstrate completed and flaked booking states.",
+        "type": "specific",
+        "date": {
+                    "$date": "2026-07-05T00:00:00+07:00"
+                },
+        "start_time": "15:00",
+        "end_time": "16:30",
+        "min_players": 2,
+        "max_players": 4,
+        "current_players": 4,
+        "status": "completed"
+    },
+    {
+        "_id": new ObjectId("66a000000000000000000006"),
+        "host_id": new ObjectId("665000000000000000000006"),
+        "cafe_id": new ObjectId("666000000000000000000002"),
+        "table_id": null,
+        "game_id": new ObjectId("668000000000000000000004"),
+        "title": "Pandemic Team Mission",
+        "description": "Cancelled meetup used to demonstrate refund handling.",
+        "type": "specific",
+        "date": {
+                    "$date": "2026-07-12T00:00:00+07:00"
+                },
+        "start_time": "17:00",
+        "end_time": "19:00",
+        "min_players": 2,
+        "max_players": 4,
+        "current_players": 0,
+        "status": "cancelled"
+    }
+])

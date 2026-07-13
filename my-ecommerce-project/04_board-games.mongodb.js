@@ -1,0 +1,96 @@
+use("my-ecommerce");
+
+db.board-games.deleteMany({});
+
+db.board-games.insertMany([
+    {
+    "_id": new ObjectId("668000000000000000000001"),
+    "title": "Catan",
+    "min_players": 3,
+    "max_players": 4,
+    "duration_minutes": 90,
+    "category": "strategy",
+    "complexity": "intermediate"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000002"),
+    "title": "Werewolf",
+    "min_players": 5,
+    "max_players": 12,
+    "duration_minutes": 45,
+    "category": "party",
+    "complexity": "beginner"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000003"),
+    "title": "Splendor",
+    "min_players": 2,
+    "max_players": 4,
+    "duration_minutes": 45,
+    "category": "strategy",
+    "complexity": "beginner"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000004"),
+    "title": "Pandemic",
+    "min_players": 2,
+    "max_players": 4,
+    "duration_minutes": 60,
+    "category": "coop",
+    "complexity": "intermediate"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000005"),
+    "title": "Ticket to Ride",
+    "min_players": 2,
+    "max_players": 5,
+    "duration_minutes": 60,
+    "category": "strategy",
+    "complexity": "beginner"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000006"),
+    "title": "Dixit",
+    "min_players": 3,
+    "max_players": 8,
+    "duration_minutes": 40,
+    "category": "party",
+    "complexity": "beginner"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000007"),
+    "title": "Azul",
+    "min_players": 2,
+    "max_players": 4,
+    "duration_minutes": 45,
+    "category": "strategy",
+    "complexity": "intermediate"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000008"),
+    "title": "Coup",
+    "min_players": 2,
+    "max_players": 6,
+    "duration_minutes": 20,
+    "category": "party",
+    "complexity": "beginner"
+    },
+    {
+    "_id": new ObjectId("668000000000000000000009"),
+    "title": "Sushi Go!",
+    "min_players": 2,
+    "max_players": 5,
+    "duration_minutes": 20,
+    "category": "party",
+    "complexity": "beginner"
+    },
+    {
+    "_id": new ObjectId("66800000000000000000000a"),
+    "title": "Carcassonne",
+    "min_players": 2,
+    "max_players": 5,
+    "duration_minutes": 60,
+    "category": "strategy",
+    "complexity": "intermediate"
+    }
+])
