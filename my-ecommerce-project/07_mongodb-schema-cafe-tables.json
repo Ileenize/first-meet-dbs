@@ -1,16 +1,79 @@
-/*const cafeTableSchema = new mongoose.Schema({
-  cafe_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Cafe', required: true },
-  table_number: { type: String, required: true },
-  capacity: { type: Number, required: true },
-  status: { 
-    type: String, 
-    enum: ['available', 'occupied', 'out_of_service'], 
-    default: 'available' 
+[
+  {
+    "_id": {
+      "$oid": "667000000000000000000001"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000001"
+    },
+    "table_number": "A1",
+    "capacity": 4,
+    "status": "occupied"
+  },
+  {
+    "_id": {
+      "$oid": "667000000000000000000002"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000001"
+    },
+    "table_number": "A2",
+    "capacity": 6,
+    "status": "available"
+  },
+  {
+    "_id": {
+      "$oid": "667000000000000000000003"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000001"
+    },
+    "table_number": "A3",
+    "capacity": 4,
+    "status": "available"
+  },
+  {
+    "_id": {
+      "$oid": "667000000000000000000004"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000001"
+    },
+    "table_number": "A4",
+    "capacity": 8,
+    "status": "out_of_service"
+  },
+  {
+    "_id": {
+      "$oid": "667000000000000000000005"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000002"
+    },
+    "table_number": "B1",
+    "capacity": 8,
+    "status": "occupied"
+  },
+  {
+    "_id": {
+      "$oid": "667000000000000000000006"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000002"
+    },
+    "table_number": "B2",
+    "capacity": 6,
+    "status": "available"
+  },
+  {
+    "_id": {
+      "$oid": "667000000000000000000007"
+    },
+    "cafe_id": {
+      "$oid": "666000000000000000000002"
+    },
+    "table_number": "B3",
+    "capacity": 4,
+    "status": "available"
   }
-});
-
-// ทำ Index ร่วมกันเพื่อให้ table_number ซ้ำกันไม่ได้ในคาเฟ่เดียวกัน
-cafeTableSchema.index({ cafe_id: 1, table_number: 1 }, { unique: true });
-
-module.exports = mongoose.model('CafeTable', cafeTableSchema);*/
-
+]

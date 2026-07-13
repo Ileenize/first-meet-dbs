@@ -1,21 +1,32 @@
-/*const cafeSchema = new mongoose.Schema({
-  owner_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  name: { type: String, required: true, trim: true },
-  address: { type: String, required: true },
-  phone: { type: String, required: true },
-  operating_hours: [{
-    day: { type: String, enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] },
-    open_time: { type: String }, // Format: "10:00"
-    close_time: { type: String } // Format: "22:00"
-  }]
-}, { timestamps: true });*/
-
-//module.exports = mongoose.model('Cafe', cafeSchema);
-
-[{
-  "_id": 1,
-  "owner_id": 1,
-  "name": "pixel",
-  "address": "Kangsadan",
-  "phone": "000-000-0000"
-}]
+[
+  {
+    "_id": {
+      "$oid": "666000000000000000000001"
+    },
+    "owner_id": {
+      "$oid": "66500000000000000000000b"
+    },
+    "name": "Meeple Corner Cafe",
+    "address": "99/1 ถนนตัวอย่าง ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น",
+    "phone": "043-000-101",
+    "operating_hours": [
+      "Mon-Fri 12:00-22:00",
+      "Sat-Sun 10:00-23:00"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "666000000000000000000002"
+    },
+    "owner_id": {
+      "$oid": "66500000000000000000000c"
+    },
+    "name": "Lucky Dice Board Game Cafe",
+    "address": "88/2 ถนนตัวอย่าง ตำบลศิลา อำเภอเมืองขอนแก่น จังหวัดขอนแก่น",
+    "phone": "043-000-202",
+    "operating_hours": [
+      "Mon-Fri 14:00-22:00",
+      "Sat-Sun 11:00-23:00"
+    ]
+  }
+]
